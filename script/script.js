@@ -54,7 +54,6 @@ window.addEventListener('scroll', fixedNav)
 const swiperReview = new Swiper('.review__swiper', {
     slidesPerView: 1,
     spaceBetween: 50,
-    autoHeight: true,
     
     // Navigation arrows
     navigation: {
@@ -66,7 +65,6 @@ const swiperReview = new Swiper('.review__swiper', {
     breakpoints: {
 
     768: {
-        autoHeight: true,
         slidesPerView: 1,
     },
 
