@@ -717,3 +717,119 @@ input[type=button]:focus{
         }
     }
 }
+
+
+
+// NAROD
+
+.narod {
+    margin: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem) 0;
+
+    position: relative;
+    overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 190px;
+            
+
+            @media (max-width: 480px) {
+                background: $mainColor;
+
+            }
+        }
+
+    @media (max-width: 480px) {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+    // .narod__wrapper
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: #fff;
+
+        position: relative;
+        z-index: 3;
+
+        padding: clamp(0.938rem, 0.369rem + 2.84vw, 2.5rem);
+        padding-left: 60px;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            padding: clamp(0.938rem, 0.369rem + 2.84vw, 2.5rem);
+        }
+    }
+    // .narod__content
+    &__content {
+        max-width: 550px;
+        width: 100%;
+    }
+    // .narod__text
+    &__text {
+        font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+        line-height: 1.5;
+        color: #5C5C5C;
+
+        @media (max-width: 480px) {
+            text-align: center;
+        }
+    }
+    // .narod__img
+    &__img {
+        max-width: 440px;
+        width: 100%;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+
+// METHOD
+
+.method {
+    margin: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem) 0;
+
+    // .method__wrapper
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+    // .method__img
+    &__img {
+        max-width: 490px;
+        width: 100%;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    // .method__content
+    &__content {
+        max-width: 670px;
+        width: 100%;
+    }
+    // .method__text
+    &__text {
+        font-size: clamp(0.875rem, 0.784rem + 0.45vw, 1.125rem);
+        line-height: 1.4;
+        color: #5C5C5C;
+    }
+}
