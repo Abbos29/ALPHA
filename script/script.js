@@ -46,3 +46,29 @@ function fixedNav() {
   }
 }
 window.addEventListener('scroll', fixedNav)
+
+
+
+// SWIPER
+
+const swiperReview = new Swiper('.review__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    autoHeight: true,
+    
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+
+    768: {
+        autoHeight: true,
+        slidesPerView: 1,
+    },
+
+  }
+});
