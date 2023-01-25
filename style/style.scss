@@ -70,12 +70,17 @@ h6 {
 }
 
 // GLOBAL
+$mainColor: #74EB87;
+
 html {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1;
     color: #000;
+}
+body {
+    background: #F8F8F8;
 }
 
 a {
@@ -99,7 +104,28 @@ a {
     }
 }
 
-$mainColor: #74EB87;
+.section-title {
+    font-size: 32px;
+    line-height: 1.05;
+    color: #000000;
+    position: relative;
+    margin-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+        content: '';
+        position: relative;
+        bottom: -30px;
+        left: 0;
+        width: 90px;
+        height: 5px;
+        background: $mainColor;
+    }
+}
+
+
 
 
 
@@ -284,7 +310,6 @@ nav {
 }
 
 
-
 .hero {
     background: $mainColor;
     overflow: hidden;
@@ -435,3 +460,126 @@ nav {
         }
     }
 }
+
+
+
+// FORMA
+
+.contact-form{
+    max-width: 100%; 
+    width: 100%;
+
+    background: #fff;
+    padding: 35px;
+
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px 20px; 
+    grid-template-areas: 
+        "forma__title forma__title forma__title"
+        "input-1 input-2 input-3"
+        "forma__text forma__text input-4"; 
+
+    .input-1 { grid-area: input-1; }
+    .input-2 { grid-area: input-2; }
+    .input-3 { grid-area: input-3; }
+    .forma__text { grid-area: forma__text; }
+    .forma__title { grid-area: forma__title; }
+    .input-4 { grid-area: input-4; }
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-areas: 
+            "forma__title forma__title"
+            "input-1 input-2"
+            "input-3 input-4"
+            "forma__text forma__text"; 
+
+    }
+    @media (max-width: 480px) {
+        padding: 20px;
+        gap: 15px 15px;
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "forma__title"
+            "input-1"
+            "input-2"
+            "input-3"
+            "input-4"
+            "forma__text"; 
+
+    }
+}
+input[type=text], input[type=number], textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    outline: none;
+    max-width: 100%;
+    width: 100%;
+    padding: 25px 10px 25px 35px;
+    transition: all .4s;
+
+    background: #FBFBFB;
+    border: 1px solid #D1D1D1;
+
+    &::placeholder {
+        color: #5C5C5C;
+    }
+
+    @media (max-width: 480px) {
+        padding: 15px;
+    }
+}
+
+input[type=button]{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 24px;
+    background: $mainColor;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+
+    @media (max-width: 480px) {
+        padding: 15px;
+    }
+}
+input[type=button]:hover{
+    color: #FFF;
+    transition: all .2s;
+    background: green;
+}
+input[type=button]:active{
+    transition: all .4s;
+    top: 3px;
+    box-shadow: none;
+}
+input[type=button]:focus{
+    position: relative;
+    transition: all .2s;
+    outline: none;
+}
+
+
+.forma {
+    margin: 50px 0;
+    // .forma__title
+    &__title {
+        font-size: 22px;
+        line-height: 27px;
+        text-align: center;
+        color: #000000;
+    }
+    // .forma__text
+    &__text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
